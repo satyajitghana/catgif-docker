@@ -7,18 +7,19 @@ Go to <https://labs.play-with-docker.com/>
 ```bash
 git clone https://github.com/satyajitghana/catgif-docker
 cd catgif-docker
+git checkout compose
 ```
 
 ## Build
 
 ```bash
-docker build --tag catgif:latest .
+docker compose build
 ```
 
 ## Run
 
 ```bash
-docker run -p 80:5000 catgif:latest
+docker compose up
 ```
 
-Now Open Port `80` of the Machine (Play With Docker)
+Now Open Port `3000` of the Machine (Play With Docker)
