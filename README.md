@@ -18,7 +18,7 @@ docker build --tag catgif:latest .
 ## Run
 
 ```bash
-docker run -p 80:5000 catgif:latest
+docker run -p 80:8000 catgif:latest
 ```
 
 Now Open Port `80` of the Machine (Play With Docker)

@@ -1,26 +1,24 @@
-<html>
-  <head>
-    <style type="text/css">
-      body {
-        background: black;
-        color: white;
-      }
-      div.container {
-        max-width: 500px;
-        margin: 100px auto;
-        border: 20px solid white;
-        padding: 10px;
-        text-align: center;
-      }
-      h4 {
-        text-transform: uppercase;
-      }
-    </style>
-  </head>
-  <body>
-    <div class="container">
-      <h4>Cat Gif of the day</h4>
-      <img src="{{url}}" />
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cat GIF of the Day</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+</head>
+<body class="bg-gray-900 text-white min-h-screen flex items-center justify-center">
+    <div class="container mx-auto px-4">
+        <div class="max-w-2xl mx-auto bg-gray-800 rounded-lg shadow-lg overflow-hidden">
+            <div class="p-6">
+                <h1 class="text-3xl font-bold mb-4 text-center">Cat GIF of the Day</h1>
+                <div class="h-96 relative">
+                    <img src="{{url}}" alt="Cat GIF" class="absolute inset-0 w-full h-full object-contain rounded-lg">
+                </div>
+            </div>
+            <div class="bg-gray-700 px-6 py-4">
+                <p class="text-center text-gray-300">Powered by Tenor API</p>
+            </div>
+        </div>
     </div>
-  </body>
+</body>
 </html>

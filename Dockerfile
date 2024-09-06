@@ -1,20 +1,20 @@
-# our base image
-FROM python:3.10.5-alpine
+# Use an official Python runtime as the base image
+FROM python:3.11-alpine
 
-# set working directory inside the image
+# Set the working directory in the container
 WORKDIR /app
 
-# copy our requirements
-COPY requirements.txt requirements.txt
+# Copy the requirements file into the container
+COPY requirements.txt .
 
-# install dependencies
-RUN pip3 install -r requirements.txt
+# Install the required packages
+RUN pip install --no-cache-dir -r requirements.txt
 
-# copy this folder contents to image
+# Copy the rest of the application code into the container
 COPY . .
 
-# tell the port number the container should expose
-EXPOSE 5000
+# Expose the port that the application will run on
+EXPOSE 8000
 
-# run the application
-CMD [ "python3", "-m" , "flask", "run", "--host=0.0.0.0"]
+# Start the FastAPI application using uvicorn
+CMD ["uvicorn", "app:app", "--host", "0.0.0.0", "--port", "8000"]
